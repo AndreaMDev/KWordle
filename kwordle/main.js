@@ -288,7 +288,7 @@ function showMessage(message) {
     // Hide message after 2 seconds
     setTimeout(function() {
       messageElement.style.display = "none";
-    }, 2000);
+    }, 5000);
   }
 }
 

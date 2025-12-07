@@ -88,8 +88,6 @@ function initGame() {
   // Add indicator key
   updateIndicatorKey();
 
-//  showMessage("Target word selected: " + gameState.targetWord);
-
 }
 
 // Add a key explaining what the symbols mean
@@ -211,14 +209,14 @@ function isValidWord(word) {
 // Submit the current guess
 function submitGuess() {
   if (!isRowFilled()) {
-    showMessage("Not enough letters");
+    showMessage("Not enough letters", 2000);
     return;
   }
   
   var guess = getCurrentGuess();
   
   if (!isValidWord(guess)) {
-    showMessage("Not in word list");
+    showMessage("Not in word list", 2000);
     return;
   }
   
@@ -232,11 +230,11 @@ function submitGuess() {
   if (guess === gameState.targetWord) {
     gameState.gameOver = true;
     gameState.gameWon = true;
-    showMessage("You won!");
+    showMessage("You won!", 5000);
     updateStatistics(true);
   } else if (gameState.currentAttempt >= gameState.maxAttempts) {
     gameState.gameOver = true;
-    showMessage("Game over! The word was " + gameState.targetWord);
+    showMessage("Game over! The word was " + gameState.targetWord, 5000);
     updateStatistics(false);
   }
 }
@@ -278,7 +276,7 @@ function checkGuess(guess) {
 }
 
 // Show message to the user
-function showMessage(message) {
+function showMessage(message, timeout) {
   gameState.message = message;
   var messageElement = document.getElementById("message");
   if (messageElement) {
@@ -288,7 +286,7 @@ function showMessage(message) {
     // Hide message after 2 seconds
     setTimeout(function() {
       messageElement.style.display = "none";
-    }, 2000);
+    }, timeout);
   }
 }
 

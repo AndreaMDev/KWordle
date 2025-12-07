@@ -236,7 +236,7 @@ function submitGuess() {
     updateStatistics(true);
   } else if (gameState.currentAttempt >= gameState.maxAttempts) {
     gameState.gameOver = true;
-    showMessage("Game over! The word was " + gameState.targetWord);
+    showMessage("Game over! The word was " + gameState.targetWord, 5000);
     updateStatistics(false);
   }
 }
@@ -278,7 +278,7 @@ function checkGuess(guess) {
 }
 
 // Show message to the user
-function showMessage(message) {
+function showMessage(message, timeout=2000) {
   gameState.message = message;
   var messageElement = document.getElementById("message");
   if (messageElement) {
@@ -288,7 +288,7 @@ function showMessage(message) {
     // Hide message after 2 seconds
     setTimeout(function() {
       messageElement.style.display = "none";
-    }, 5000);
+    }, timeout);
   }
 }
 

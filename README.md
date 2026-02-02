@@ -2,6 +2,7 @@
 
 Wordle for Kindle e-readers.<br />
 ![screenshot](assets/screenshot.png)
+    <img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/89540ffc-2088-4f85-8004-1c198233a358" />
 <p>
   <a href="https://ko-fi.com/kurizu" target="_blank">
     <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" />
